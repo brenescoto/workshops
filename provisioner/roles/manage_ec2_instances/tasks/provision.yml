@@ -83,8 +83,8 @@
   include_tasks: 'ami_find/ami_find_{{ workshop_type }}.yml'
 
 ## Instance creation
-- name: provision workshop instances
-  include_tasks: 'instances/instances_{{ workshop_type }}.yml'
+#- name: provision workshop instances
+#  include_tasks: 'instances/instances_{{ workshop_type }}.yml'
 
 - name: create instructor_inventory, and student files
   include_tasks: create_inventory.yml
