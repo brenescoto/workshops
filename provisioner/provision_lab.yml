@@ -28,17 +28,17 @@
   roles:
     - connectivity_test
 
-- name: Configure nginx on attendance host
-  hosts: attendance
-  become: true
-  gather_facts: true
-  tasks:
-    - block:
-        - include_role:
-            name: workshop_attendance_nginx
-        - include_role:
-            name: workshop_attendance
-      when: attendance|bool
+#- name: Configure nginx on attendance host
+#  hosts: attendance
+#  become: true
+#  gather_facts: true
+#  tasks:
+#    - block:
+#        - include_role:
+#           name: workshop_attendance_nginx
+#       - include_role:
+#            name: workshop_attendance
+#      when: attendance|bool
 
 - name: wait for all security nodes to have SSH reachability
   hosts: "security_connection_check"
