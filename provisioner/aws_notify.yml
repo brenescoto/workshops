@@ -1,0 +1,15 @@
+---
+- name: Report Failure provisioning instances on AWS
+  hosts: localhost
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: report failure
+      debug:
+        msg: "AWS Instances weren't deployed, please review logs for more information"
+    - name: Notify by telegram
+      community.general.telegram:
+         #token: '9999999:XXXXXXXXXXXXXXXXXXXXXXX'
+         #chat_id: 000000
+         msg: Ansible task finished
+    
